@@ -45,8 +45,8 @@ class AuthInitial extends Migration
         // Karyawan
         $fields = [
             'id'               => ['type' => 'int', 'constraint' => 11, 'unsigned' => true, 'auto_increment' => true],
-            'id_grup'          => ['type' => 'int', 'constraint' => 11, 'unsigned' => true, 'default' => 0],
-            'id_divisi'        => ['type' => 'int', 'constraint' => 11, 'unsigned' => true, 'default' => 0],
+            'id_grup'          => ['type' => 'int', 'constraint' => 11, 'unsigned' => true, 'null' => true],
+            'id_divisi'        => ['type' => 'int', 'constraint' => 11, 'unsigned' => true, 'null' => true],
             'nik'              => ['type' => 'varchar', 'constraint' => 10, 'null' => true],
             'jabatan'          => ['type' => 'varchar', 'constraint' => 30, 'null' => true],
             'nama_lengkap'     => ['type' => 'varchar', 'constraint' => 100, 'null' => true],
