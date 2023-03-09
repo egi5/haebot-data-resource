@@ -34,25 +34,15 @@ $routes->get('/', 'AuthController::login');
 
 $routes->group('', ['filter' => 'isLoggedIn'], function ($routes) {
 
+    $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'permission:Dashboard']);
+
     // GetData
     $routes->get('/wilayah/kota_by_provinsi', 'GetWilayah::KotaByProvinsi');
     $routes->get('/wilayah/kecamatan_by_kota', 'GetWilayah::KecamatanByKota');
     $routes->get('/wilayah/kelurahan_by_kecamatan', 'GetWilayah::KelurahanByKecamatan');
 
-    // Menu
-    $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'permission:Dashboard']);
-    $routes->get('master', 'Menu::Data_master', ['filter' => 'permission:Data Master']);
-    $routes->get('pembelian', 'Menu::Pembelian', ['filter' => 'permission:Pembelian']);
-    $routes->get('penjualan', 'Menu::Penjualan', ['filter' => 'permission:Penjualan']);
-    $routes->get('produksi', 'Menu::Produksi', ['filter' => 'permission:Produksi']);
-    $routes->get('menu_gudang', 'Menu::Gudang', ['filter' => 'permission:Gudang']);
-    $routes->get('inventaris', 'Menu::Inventaris', ['filter' => 'permission:Inventaris']);
-    $routes->get('akuntansi', 'Menu::Akuntansi', ['filter' => 'permission:Akuntansi']);
-    $routes->get('sdm', 'Menu::SDM', ['filter' => 'permission:SDM']);
-    $routes->get('laporan', 'Menu::Laporan', ['filter' => 'permission:Laporan']);
 
     // ------------------------------------------------------------------------------------ DATA MASTER
-
     // Supplier
     $routes->get('supplier', 'Supplier::index', ['filter' => 'permission:Data Master']);
     $routes->get('supplier/(:num)', 'Supplier::show/$1', ['filter' => 'permission:Data Master']);
@@ -98,18 +88,6 @@ $routes->group('', ['filter' => 'isLoggedIn'], function ($routes) {
 
     $routes->resource('ekspedisi', ['filter' => 'permission:Data Master']);
     $routes->resource('jasa', ['filter' => 'permission:Data Master']);
-
-    // ------------------------------------------------------------------------------------ TRANSAKSI
-
-    // Pemesanan
-    $routes->resource('pemesanan', ['filter' => 'permission:Pembelian']);
-    $routes->get('getdatapemesanan', 'Pemesanan::getDataPemesanan', ['filter' => 'permission:Pembelian']);
-    $routes->get('list_pemesanan/(:any)', 'Pemesanan_detail::List_pemesanan/$1', ['filter' => 'permission:Pembelian']);
-    $routes->post('simpan_pemesanan', 'Pemesanan_detail::simpan_pemesanan', ['filter' => 'permission:Pembelian']);
-    $routes->post('produks_pemesanan', 'Pemesanan_detail::getListProdukPemesanan', ['filter' => 'permission:Pembelian']);
-    $routes->post('check_list_produk', 'Pemesanan_detail::check_list_produk', ['filter' => 'permission:Pembelian']);
-    $routes->post('create_list_produk', 'Pemesanan_detail::create', ['filter' => 'permission:Pembelian']);
-    $routes->resource('pemesanan_detail', ['filter' => 'permission:Pembelian']);
 });
 
 /*

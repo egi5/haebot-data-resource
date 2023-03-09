@@ -64,7 +64,7 @@ class GroupSeeder extends Seeder
             'name' => 'Grup Kepala Divisi',
             'description' => 'Kepala setiap Divisi'
         ]);
-        $where = "name!='Akuntansi' AND name!='SDM' AND name!='Admin Supplier' AND name!='Admin Customer' AND name!='Penanggung Jawab Gudang'";
+        $where = "name!='Keuangan' AND name!='SDM' AND name!='Admin Supplier' AND name!='Admin Customer' AND name!='Penanggung Jawab Gudang'";
         $module_kadiv = $permissions->where($where)->findAll();
         foreach ($module_kadiv as $mod_kadiv) {
             $groups->addPermissionToGroup($mod_kadiv->id, $groups->getInsertID());

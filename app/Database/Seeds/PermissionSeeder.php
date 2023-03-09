@@ -16,7 +16,7 @@ class PermissionSeeder extends Seeder
             'Produksi',
             'Gudang',
             'Inventaris',
-            'Akuntansi',
+            'Keuangan',
             'SDM',
             'Laporan',
             'Admin Supplier',
