@@ -17,7 +17,7 @@ class Pembelian extends Migration
             'id_gudang'             => ['type' => 'int', 'constraint' => 11, 'unsigned' => true, 'null' => true],
             'no_pembelian'          => ['type' => 'varchar', 'constraint' => 30],
             'tanggal'               => ['type' => 'date'],
-            'origin'                => ['type' => 'int', 'unsigned' => true],
+            'origin'                => ['type' => 'varchar', 'constraint' => 80],
             'total_harga_produk'    => ['type' => 'int', 'unsigned' => true],
             'status'                => ['type' => 'enum', 'constraint' => ['Diproses', 'Dikirim', 'Sampai', 'Gagal'], 'default' => 'Diproses'],
             'tanggal_datang'        => ['type' => 'date', 'null' => true],
