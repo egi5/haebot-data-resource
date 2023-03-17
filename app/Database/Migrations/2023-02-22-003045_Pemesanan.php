@@ -16,7 +16,7 @@ class Pemesanan extends Migration
             'no_pemesanan'          => ['type' => 'varchar', 'constraint' => 30],
             'tanggal'               => ['type' => 'date'],
             'total_harga_produk'    => ['type' => 'int', 'unsigned' => true],
-            'status'                => ['type' => 'enum', 'constraint' => ['Pending', 'Ordered', 'Dikirim', 'Sampai', 'Gagal'], 'default' => 'Pending'],
+            'status'                => ['type' => 'enum', 'constraint' => ['Pending', 'Ordered', 'Pembelian', 'Dikirim', 'Sampai', 'Gagal'], 'default' => 'Pending'],
             'created_at'            => ['type' => 'datetime', 'null' => true],
             'updated_at'            => ['type' => 'datetime', 'null' => true],
             'deleted_at'            => ['type' => 'datetime', 'null' => true],
