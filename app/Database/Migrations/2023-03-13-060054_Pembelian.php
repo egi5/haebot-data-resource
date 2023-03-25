@@ -19,7 +19,7 @@ class Pembelian extends Migration
             'tanggal'               => ['type' => 'date'],
             'origin'                => ['type' => 'varchar', 'constraint' => 80],
             'total_harga_produk'    => ['type' => 'int', 'unsigned' => true],
-            'status'                => ['type' => 'enum', 'constraint' => ['Belum Fixing', 'Diproses', 'Dikirim', 'Sampai', 'Gagal'], 'default' => 'Belum Fixing'],
+            'status'                => ['type' => 'enum', 'constraint' => ['Fixing', 'Diproses', 'Dikirim', 'Sampai', 'Gagal'], 'default' => 'Fixing'],
             'status_pembayaran'     => ['type' => 'enum', 'constraint' => ['Belum dibayar', 'Lunas'], 'default' => 'Belum dibayar'],
             'tanggal_datang'        => ['type' => 'date', 'null' => true],
             'panjang'               => ['type' => 'int', 'constraint' => 11],
