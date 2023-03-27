@@ -17,7 +17,6 @@ class Pembelian extends Migration
             'id_gudang'             => ['type' => 'int', 'constraint' => 11, 'unsigned' => true, 'null' => true],
             'no_pembelian'          => ['type' => 'varchar', 'constraint' => 30],
             'tanggal'               => ['type' => 'date'],
-            'origin'                => ['type' => 'varchar', 'constraint' => 80],
             'total_harga_produk'    => ['type' => 'int', 'unsigned' => true],
             'status'                => ['type' => 'enum', 'constraint' => ['Fixing', 'Diproses', 'Dikirim', 'Sampai', 'Gagal'], 'default' => 'Fixing'],
             'status_pembayaran'     => ['type' => 'enum', 'constraint' => ['Belum dibayar', 'Lunas'], 'default' => 'Belum dibayar'],

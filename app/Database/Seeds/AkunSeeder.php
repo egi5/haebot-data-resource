@@ -17,36 +17,43 @@ class AkunSeeder extends Seeder
         $kategori->insert([    //1
             'nama'             => 'Kas & Bank',
             'deskripsi'        => '-',
-            'debit'            => 'Plus',
-            'kredit'           => 'Minus',
+            'debit'            => 1,
+            'kredit'           => -1,
         ]);
 
         $kategori->insert([    //2
             'nama'             => 'Akun Piutang',
             'deskripsi'        => '-',
-            'debit'            => 'Minus',
-            'kredit'           => 'Plus',
+            'debit'            => 1,
+            'kredit'           => -1,
         ]);
 
         $kategori->insert([    //3
             'nama'             => 'Persediaan',
             'deskripsi'        => '-',
-            'debit'            => 'Plus',
-            'kredit'           => 'Minus',
+            'debit'            => 1,
+            'kredit'           => -1,
         ]);
-        
+
         $kategori->insert([    //4
             'nama'             => 'Aktiva Lancar Lainnya',
             'deskripsi'        => '-',
-            'debit'            => 'Plus',
-            'kredit'           => 'Minus',
+            'debit'            => 1,
+            'kredit'           => -1,
         ]);
 
         $kategori->insert([    //5
             'nama'             => 'Aktiva Tetap',
             'deskripsi'        => '-',
-            'debit'            => 'Plus',
-            'kredit'           => 'Minus',
+            'debit'            => 1,
+            'kredit'           => -1,
+        ]);
+
+        $kategori->insert([    //6
+            'nama'             => 'Akun Hutang',
+            'deskripsi'        => '-',
+            'debit'            => -1,
+            'kredit'           => 1,
         ]);
 
 
@@ -76,8 +83,20 @@ class AkunSeeder extends Seeder
         ]);
 
         $akun->insert([
+            'kode'         => '20100',
+            'nama'         => 'Hutang Usaha',
+            'id_kategori'  => '6',
+        ]);
+
+        $akun->insert([
             'kode'         => '10200',
             'nama'         => 'Persediaan Barang',
+            'id_kategori'  => '3',
+        ]);
+
+        $akun->insert([
+            'kode'         => '10201',
+            'nama'         => 'Produk INS',
             'id_kategori'  => '3',
         ]);
     }
